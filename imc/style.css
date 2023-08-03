@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+:root {
+  font-size: 62.5%;
+  /*
+    ?Propriedades personalizadas ou variaveis css
+    Basicamente e uma variavel que vc usar em vez de colocar a cor/atributo em 
+    algum elemento no css, isso ajuda em grandes projetos que vc vai usar um cor/atributo
+    varias vezes em varios contexto, sem precisar ficar repetindo as coisa só usar a variavel
+    ficando mais facil para fazer manutenção também por gera um efeito cascata caso aja alguma 
+    mudança
+  */
+  --tt-heading: #0c3440;
+  --tt-label: #00453a;
+  --tt-input: #212529;
+  --ot-input: #02799d;
+  --bd-input: rgba(73, 80, 87, 0.3);
+  --bg-input: #dce2e9;
+  --tt-placeholder: rgba(73, 80, 87, 0.5);
+  --tt-button: white;
+  --bg-button: #02799d;
+  --bg-button-hover: #015f7b;
+  --bg-error: #f03e3e;
+  --tt-erro: white;
+}
+
+body {
+  background-color: #040924;
+  font-family: "Roboto" sans-serif;
+}
+
+body,
+input,
+button {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  background: #fff;
+  padding: 4.8rem 6.4rem 6.4rem;
+  max-width: 42.8rem;
+  margin-inline: auto;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.6rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  line-height: 4rem;
+  color: var(--tt-heading);
+}
+
+form h1 {
+  margin-bottom: 3.2rem;
+}
+
+form label {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: var(--tt-label);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+form input {
+  width: 100%;
+  border: 1px solid var(--bd-input);
+  background: var(--bg-input);
+  padding: 1.6rem;
+  border-radius: 0.4rem;
+}
+
+form input:focus {
+  outline: 2px solid var(--ot-input);
+}
+
+.input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+form button {
+  margin-top: 3.2rem;
+  padding: 1.6rem;
+  width: 112%;
+
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--bg-button);
+  color: var(--tt-button);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  cursor: pointer;
+  transition: backgroud 0.3s;
+}
+
+form button:hover {
+  background-color: var(--bg-button-hover);
+}
+
+form {
+  width: 30rem;
+}
+
+/* !Modal */
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: grid;
+  place-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal {
+  position: relative;
+}
+.modal button {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+}
+.modal button:hover {
+  transform: scale(1.1);
+}
+
+/* !Alert erro */
+
+.alert-erro.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.alert-erro {
+  position: absolute;
+  font-weight: bold;
+  background-color: var(--bg-error);
+  color: var(--tt-erro);
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 0 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-30px);
+  transition: transform .7s;
+}
