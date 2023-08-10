@@ -95,7 +95,7 @@ function clique() {
     ul.after(newbutton)
 }
 
-// // executando o evento no proprio js fazendo a seleção o item e executando com o addEventListener
+//  executando o evento no proprio js fazendo a seleção o item e executando com o addEventListener
 // let botao = document.getElementsByClassName("botao")
 // botao.addEventListener("click", clique)
 
