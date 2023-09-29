@@ -23,7 +23,8 @@
   fill: var(--primary-color);
 }
 
-.set svg path {
+.set svg path,
+.stop svg path {
   fill: #fff;
 }
 button svg {
